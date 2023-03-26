@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.greedygame.sdkx:commons:0.0.94@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/59e5f0d0963d1d81aeaae023fff1c5e2/jetified-commons-0.0.94/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/59e5f0d0963d1d81aeaae023fff1c5e2/jetified-commons-0.0.94/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/59e5f0d0963d1d81aeaae023fff1c5e2/jetified-commons-0.0.94/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.greedygame.sdkx/commons/0.0.94/f29c020b063bd8c4f6cd00fae5226420f5c30718/commons-0.0.94-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

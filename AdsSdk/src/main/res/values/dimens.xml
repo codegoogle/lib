@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="native_big_height">@dimen/_210sdp</dimen>
+    <dimen name="native_big_margin">@dimen/_4sdp</dimen>
+
+    <dimen name="native_small_height">@dimen/_60sdp</dimen>
+    <dimen name="native_small_margin">@dimen/_4sdp</dimen>
+
+    <dimen name="native_small_top_height">@dimen/_100sdp</dimen>
+    <dimen name="native_small_top_margin">@dimen/_4sdp</dimen>
+
+
+    <dimen name="fb_native_banner_height">@dimen/_60sdp</dimen>
+    <dimen name="fb_native_banner_margin">@dimen/_4sdp</dimen>
+
+
+    <!--    For ads Btn-->
+<!--    <dimen name="ads_btn_height">40dp</dimen>-->
+    <dimen name="ads_btn_height">@dimen/_30sdp</dimen>
+    <dimen name="ads_btn_border_height">0dp</dimen>
+    <dimen name="ads_btn_radius">@dimen/_15sdp</dimen>
+
+
+    <dimen name="ads_btn_2_height_top">@dimen/_100sdp</dimen>
+    <dimen name="ads_btn_2_height_bottom">@dimen/_100sdp</dimen>
+
+
+</resources>

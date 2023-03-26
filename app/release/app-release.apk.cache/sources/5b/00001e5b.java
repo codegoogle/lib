@@ -1,0 +1,26 @@
+package com.google.android.gms.internal.ads;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.internal.BaseGmsClient;
+import com.p7700g.p99005.x1;
+
+/* compiled from: com.google.android.gms:play-services-ads@@21.1.0 */
+/* loaded from: classes2.dex */
+public final class zzbdh implements BaseGmsClient.BaseOnConnectionFailedListener {
+    public final /* synthetic */ zzcga zza;
+    public final /* synthetic */ zzbdi zzb;
+
+    public zzbdh(zzbdi zzbdiVar, zzcga zzcgaVar) {
+        this.zzb = zzbdiVar;
+        this.zza = zzcgaVar;
+    }
+
+    @Override // com.google.android.gms.common.internal.BaseGmsClient.BaseOnConnectionFailedListener
+    public final void onConnectionFailed(@x1 ConnectionResult connectionResult) {
+        Object obj;
+        obj = this.zzb.zzd;
+        synchronized (obj) {
+            this.zza.zze(new RuntimeException("Connection failed."));
+        }
+    }
+}

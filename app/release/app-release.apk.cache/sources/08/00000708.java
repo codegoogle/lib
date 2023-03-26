@@ -1,0 +1,57 @@
+package com.anythink.expressad;
+
+/* loaded from: classes2.dex */
+public final class a extends c {
+    public static final String A = "1";
+    public static final String B = "view";
+    public static final String C = "1";
+    public static final int D = 1;
+    public static final int E = 0;
+    public static final int F = -1;
+    public static final int G = 2;
+    public static final String H = "2";
+    public static final int I = 3;
+    public static final String J = "3";
+    public static final int K = 4;
+    public static final String L = "4";
+    public static final int M = 5;
+    public static final String N = "5";
+    public static final int O = 1;
+    public static final int P = 2;
+    public static final int Q = 3;
+    public static final int R = 4;
+    public static final int S = 1;
+    public static final int T = 2;
+    public static final int U = 0;
+    public static final int V = 1;
+    public static final String W = "natmp";
+    public static final String X = "1";
+    public static final String Y = "isplayableec";
+    public static final String Z = "0";
+    public static boolean a = false;
+    public static final int b = 1;
+    public static final int c = 0;
+    public static final String d = "dsp_anythink_appid";
+    public static final String e = "dsp_anythink_appkey";
+    public static final String f = "unit_id";
+    public static final String g = "ad_num";
+    public static final String h = "ad_frame_num";
+    public static final String i = "catetory";
+    public static final int j = 2;
+    public static final int k = 3;
+    public static final String l = "native_info";
+    public static int m = 8000;
+    public static final String n = "isPreloadImg";
+    public static boolean o = false;
+    public static boolean p = false;
+    public static boolean q = true;
+    public static final String r = "native_video_width";
+    public static final int s = 1;
+    public static final int t = 2;
+    public static final int u = -1;
+    public static final int v = 2;
+    public static String w = "";
+    public static boolean x = false;
+    public static String y = "placement_id";
+    public static final String z = "nativecananim";
+}

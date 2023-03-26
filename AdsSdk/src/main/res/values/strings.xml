@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Vpn Ads</string>
+    <string name="no_internet_connection">Check Your Internet Connection ?</string>
+    <string name="please_disconnect_vpn">Please Disconnect VPN</string>
+    <string name="try_again">Retry</string>
+    <string name="loading_ad">Loading AD....</string>
+    <string name="proxy_disconnect">Please Remove Your Proxy Connection</string>
+    <string name="usb_debugging">USB Debugging On !\n Please Set USB Debugging &amp;\nDeveloper Option Off.</string>
+
+    <string name="ads_btn_text">Install</string>
+
+    <string name="alert_http">Continue Website</string>
+    <string name="btn_cancel">cancel</string>
+    <string name="btn_continu">continue</string>
+</resources>

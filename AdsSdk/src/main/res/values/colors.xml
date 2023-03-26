@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary_lib">#FF6200EE</color>
+
+    <!--    ExitActivity -->
+    <color name="exit_screen_bg">#FF000000</color>
+    <color name="exit_screen_extra_text">#FF000000</color>
+    <color name="exit_screen_text">#2D6EFF</color>
+    <color name="exit_screen_btn">#FF6200EE</color>
+    <color name="exit_screen_btn_text">#FFFFFFFF</color>
+
+    <!--    PrivacyPolicyActivity -->
+    <color name="back_arrow_tint">#FFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+
+    <color name="facebook_simmer">#dddddd</color>
+    <color name="ad_text_primary">#FF000000</color>
+
+    <!--    For ads Btn-->
+    <color name="ads_btn_color_start">#616261</color>
+    <color name="ads_btn_color_end">#131313</color>
+    <color name="ads_btn_color_border_start">#09FBD3</color>
+    <color name="ads_btn_color_border_end">#FE53BB</color>
+    <color name="ads_btn_color_text">#FFFFFF</color>
+
+    <color name="blueQureka">#656CEF</color>
+    <color name="textcolorQureka">#3A3838</color>
+
+</resources>

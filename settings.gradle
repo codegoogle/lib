@@ -1,0 +1,3 @@
+rootProject.name = "D57 Sample App VPN"
+include ':app'
+include ':AdsSdk'

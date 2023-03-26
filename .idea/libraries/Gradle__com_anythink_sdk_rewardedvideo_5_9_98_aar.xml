@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.anythink.sdk:rewardedvideo:5.9.98@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7c34c04a64a7338e788b28b9d6f1ae4d/jetified-rewardedvideo-5.9.98/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7c34c04a64a7338e788b28b9d6f1ae4d/jetified-rewardedvideo-5.9.98/jars/libs/anythink_rewardedvideo.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7c34c04a64a7338e788b28b9d6f1ae4d/jetified-rewardedvideo-5.9.98/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

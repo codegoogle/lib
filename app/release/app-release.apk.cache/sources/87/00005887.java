@@ -1,0 +1,26 @@
+package com.p7700g.p99005;
+
+/* compiled from: CharCode.kt */
+@vo4(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\b\n\u0002\u0010\f\n\u0002\b\u0006\u001a\u0011\u0010\u0007\u001a\u00020\u00022\u0006\u0010\u0000\u001a\u00020\u0001H\u0087\b\"\u001f\u0010\u0000\u001a\u00020\u0001*\u00020\u00028Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\u0003\u0010\u0004\u001a\u0004\b\u0005\u0010\u0006¨\u0006\b"}, d2 = {"code", "", "", "getCode$annotations", "(C)V", "getCode", "(C)I", "Char", "kotlin-stdlib"}, k = 2, mv = {1, 7, 1}, xi = 48)
+/* loaded from: classes3.dex */
+public final class qn4 {
+    @dr4(markerClass = {fo4.class})
+    @dx4
+    @tp4(version = "1.5")
+    private static final char a(int i) {
+        if (i < 0 || i > 65535) {
+            throw new IllegalArgumentException(wo1.l("Invalid Char code: ", i));
+        }
+        return (char) i;
+    }
+
+    private static final int b(char c) {
+        return c;
+    }
+
+    @dr4(markerClass = {fo4.class})
+    @dx4
+    @tp4(version = "1.5")
+    public static /* synthetic */ void c(char c) {
+    }
+}

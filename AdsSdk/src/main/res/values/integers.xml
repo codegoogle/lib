@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="ads_btn_color_gradiant_angle">180</integer>
+    <integer name="ads_btn_color_gradiant_border_angle">270</integer>
+</resources>

@@ -1,0 +1,58 @@
+package com.google.android.gms.internal.ads;
+
+/* compiled from: com.google.android.gms:play-services-ads@@21.1.0 */
+/* loaded from: classes2.dex */
+public final class zzbhh extends zzgkq implements zzgmb {
+    private static final zzbhh zzb;
+    private int zze;
+    private boolean zzf;
+    private int zzg;
+
+    static {
+        zzbhh zzbhhVar = new zzbhh();
+        zzb = zzbhhVar;
+        zzgkq.zzaP(zzbhh.class, zzbhhVar);
+    }
+
+    private zzbhh() {
+    }
+
+    public static zzbhg zza() {
+        return (zzbhg) zzb.zzay();
+    }
+
+    public static /* synthetic */ void zzd(zzbhh zzbhhVar, boolean z) {
+        zzbhhVar.zze |= 1;
+        zzbhhVar.zzf = z;
+    }
+
+    public static /* synthetic */ void zze(zzbhh zzbhhVar, int i) {
+        zzbhhVar.zze |= 2;
+        zzbhhVar.zzg = i;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzgkq
+    public final Object zzb(int i, Object obj, Object obj2) {
+        int i2 = i - 1;
+        if (i2 != 0) {
+            if (i2 != 2) {
+                if (i2 != 3) {
+                    if (i2 != 4) {
+                        if (i2 != 5) {
+                            return null;
+                        }
+                        return zzb;
+                    }
+                    return new zzbhg(null);
+                }
+                return new zzbhh();
+            }
+            return zzgkq.zzaO(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဇ\u0000\u0002င\u0001", new Object[]{"zze", "zzf", "zzg"});
+        }
+        return (byte) 1;
+    }
+
+    public final boolean zzf() {
+        return this.zzf;
+    }
+}
