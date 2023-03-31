@@ -1,9 +1,9 @@
-package com.lib.adssdk.Utils;
+package com.google.ads.Utils;
 
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import com.lib.adssdk.Activity.QurekaActivity;
+import com.google.ads.Activity.QurekaActivity;
 import com.p7700g.p99005.a00;
 import com.p7700g.p99005.bh3;
 import com.p7700g.p99005.mz;

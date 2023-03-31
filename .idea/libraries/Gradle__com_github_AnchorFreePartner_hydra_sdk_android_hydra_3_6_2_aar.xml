@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.AnchorFreePartner.hydra-sdk-android:hydra:3.6.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3916a639f7af12fac840f2a46988d6ba/transformed/jetified-hydra-3.6.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3916a639f7af12fac840f2a46988d6ba/transformed/jetified-hydra-3.6.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3916a639f7af12fac840f2a46988d6ba/transformed/jetified-hydra-3.6.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -7,12 +7,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.lib.adssdk.AppUtil;
+import com.google.play.AppUtil;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -66,13 +65,13 @@ public abstract class BaseActivity extends AppCompatActivity {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
             dialog.requestWindowFeature(1);
             dialog.setCancelable(false);
-            dialog.setContentView(com.lib.adssdk.R.layout.dialog_no_internet);
+            dialog.setContentView(com.google.ads.R.layout.dialog_no_internet);
             dialog.getWindow().setAttributes(layoutParams);
         }
 
         if (!dialog.isShowing()) {
             dialog.show();
-            ((LinearLayout) dialog.findViewById(com.lib.adssdk.R.id.ln_try_again)).setOnClickListener(new View.OnClickListener() {
+            ((LinearLayout) dialog.findViewById(com.google.ads.R.id.ln_try_again)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     checkNet();

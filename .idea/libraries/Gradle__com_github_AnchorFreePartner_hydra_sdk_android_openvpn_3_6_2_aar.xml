@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.AnchorFreePartner.hydra-sdk-android:openvpn:3.6.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ed090cb922098bc35ff9c35f884405c2/transformed/jetified-openvpn-3.6.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ed090cb922098bc35ff9c35f884405c2/transformed/jetified-openvpn-3.6.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ed090cb922098bc35ff9c35f884405c2/transformed/jetified-openvpn-3.6.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -6,11 +6,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.lib.adssdk.Activity.ExitActivity;
-import com.lib.adssdk.Activity.PrivacyPolicyActivity;
-import com.lib.adssdk.AdsManager.AdsManager;
-import com.lib.adssdk.AppUtil;
-import com.lib.adssdk.Listner.OnAdsClickListner;
+import com.google.play.Activity.ExitActivity;
+import com.google.play.Activity.PrivacyPolicyActivity;
+import com.google.play.AdsManager.AdsManager;
+import com.google.play.AppUtil;
+import com.google.play.Listner.OnAdsClickListner;
 
 public class StartActivity_One extends BaseActivity implements View.OnClickListener {
 
@@ -52,8 +52,7 @@ public class StartActivity_One extends BaseActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d("Kishan","Test");    }
+        super.onCreate(savedInstanceState);}
 
     @Override
     protected void onResume() {

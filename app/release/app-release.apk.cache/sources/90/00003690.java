@@ -1,4 +1,4 @@
-package com.lib.adssdk.Activity;
+package com.google.ads.Activity;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;

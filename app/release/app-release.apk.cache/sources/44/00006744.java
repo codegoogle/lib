@@ -9,7 +9,7 @@ import com.anchorfree.sdk.UnifiedSDKConfig;
 import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.gms.ads.MobileAds;
 import com.google.gson.Gson;
-import com.lib.adssdk.Utils.AppObserve;
+import com.google.ads.Utils.AppObserve;
 import java.util.ArrayList;
 import java.util.List;
 

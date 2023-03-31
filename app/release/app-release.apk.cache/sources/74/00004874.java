@@ -29,7 +29,7 @@ import com.anythink.rewardvideo.api.ATRewardVideoAd;
 import com.facebook.ads.RewardedVideoAd;
 import com.greedygame.core.interstitial.general.GGInterstitialAd;
 import com.greedygame.core.rewarded_ad.general.GGRewardedAd;
-import com.lib.adssdk.Utils.CustomWebView;
+import com.google.ads.Utils.CustomWebView;
 import com.p7700g.p99005.a6;
 import com.p7700g.p99005.zg3;
 import java.io.File;

@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import android.widget.VideoView;
 
 import com.hanks.htextview.scale.ScaleTextView;
-import com.lib.adssdk.AdsManager.AdsManager;
-import com.lib.adssdk.AppUtil;
-import com.lib.adssdk.Listner.OnAdsClickListner;
+import com.google.play.AdsManager.AdsManager;
+import com.google.play.AppUtil;
+import com.google.play.Listner.OnAdsClickListner;
 
 public class OneBtnActivity_BgVideo extends BaseActivity {
 

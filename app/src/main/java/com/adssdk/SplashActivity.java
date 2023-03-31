@@ -1,23 +1,16 @@
 package com.adssdk;
 
-import android.app.StatusBarManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.lib.adssdk.Ads;
-import com.lib.adssdk.AdsManager.AdsManager;
-import com.lib.adssdk.Listner.OnAdsClickListner;
-
-import java.io.File;
+import com.google.play.Ads;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -56,8 +49,8 @@ public class SplashActivity extends AppCompatActivity {
 //        ImageView gif = findViewById(R.id.gif);
 //        Glide.with(this).asGif().load(R.drawable.splash_gif).into(gif);
 
-
-        Ads.init(this, new Ads.AdsInitListner() {
+        Log.d("Kishan", "Api");
+        Ads.init(SplashActivity.this, new Ads.AdsInitListner() {
             @Override
             public void onAdsClick() {
                 startActivity(new Intent(SplashActivity.this, StartActivity_One.class));

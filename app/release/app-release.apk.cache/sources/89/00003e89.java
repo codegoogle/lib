@@ -23,7 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import com.facebook.shimmer.ShimmerFrameLayout;
-import com.lib.adssdk.Utils.CustomWebView;
+import com.google.ads.Utils.CustomWebView;
 import com.p7700g.p99005.zg3;
 
 /* compiled from: Qureka_Native_Inflate.java */

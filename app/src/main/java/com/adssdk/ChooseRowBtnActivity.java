@@ -9,9 +9,9 @@ import android.view.View;
 
 import com.adssdk.Adapter.ChooseRowBtnAdapter;
 import com.adssdk.Model.ChooseRowModel;
-import com.lib.adssdk.AdsManager.AdsManager;
-import com.lib.adssdk.AppUtil;
-import com.lib.adssdk.Listner.OnAdsClickListner;
+import com.google.play.AdsManager.AdsManager;
+import com.google.play.AppUtil;
+import com.google.play.Listner.OnAdsClickListner;
 
 import java.util.ArrayList;
 

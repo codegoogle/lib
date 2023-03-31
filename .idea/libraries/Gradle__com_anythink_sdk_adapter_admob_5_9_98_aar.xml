@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.anythink.sdk:adapter-admob:5.9.98@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cc14ca2fd3080db0698f8c7f3da28120/jetified-adapter-admob-5.9.98/jars/classes.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cc14ca2fd3080db0698f8c7f3da28120/jetified-adapter-admob-5.9.98/jars/libs/anythink_network_admob.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cc14ca2fd3080db0698f8c7f3da28120/jetified-adapter-admob-5.9.98/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8e9bab8311f762f8e067cec41d78ed6f/transformed/jetified-adapter-admob-5.9.98/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8e9bab8311f762f8e067cec41d78ed6f/transformed/jetified-adapter-admob-5.9.98/jars/libs/anythink_network_admob.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8e9bab8311f762f8e067cec41d78ed6f/transformed/jetified-adapter-admob-5.9.98/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

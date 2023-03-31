@@ -2,7 +2,7 @@ plugins {
     id 'com.android.library'
     id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 }
-//apply plugin: 'io.michaelrocks.paranoid'
+apply plugin: 'io.michaelrocks.paranoid'
 
 android {
     compileSdk 33
@@ -126,22 +126,9 @@ dependencies {
     implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
 
     //////////////// VPN ///////////////////
-//    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:sdk:3.6.2'
-//    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:openvpn:3.6.2'
-//    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:blst:3.6.2'
-//
-    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:sdk:3.6.4'
-    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:openvpn:3.6.4'
-//    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:blst:3.6.4'
+    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:sdk:3.6.2'
+    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:openvpn:3.6.2'
 
-
-//    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:sdk:4.0.0'
-//    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:openvpn:4.0.0'
-//    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:blst:4.0.0'
-
-//    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:sdk-core:4.0.0'
-//    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:hydra:4.0.0'
-//    implementation 'com.github.AnchorFreePartner.hydra-sdk-android:openvpn:4.0.0'
 
 
     //////////////// Text Animation ///////////////////

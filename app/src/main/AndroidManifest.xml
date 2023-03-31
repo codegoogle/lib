@@ -104,15 +104,15 @@
             android:theme="@style/other" />
 
         <activity
-            android:name="com.lib.adssdk.Activity.QurekaActivity"
+            android:name="com.google.play.Activity.QurekaActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lib.adssdk.Activity.ExitActivity"
+            android:name="com.google.play.Activity.ExitActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lib.adssdk.Activity.PrivacyPolicyActivity"
+            android:name="com.google.play.Activity.PrivacyPolicyActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
 

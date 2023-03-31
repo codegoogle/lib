@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.adssdk.AnimationObject;
 import com.adssdk.R;
-import com.lib.adssdk.AdsManager.AdsManager;
+import com.google.play.AdsManager.AdsManager;
 
 import java.util.ArrayList;
 

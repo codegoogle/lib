@@ -21,7 +21,7 @@ import com.greedygame.core.AppConfig;
 import com.greedygame.core.GreedyGameAds;
 import com.ironsource.mediationsdk.IronSource;
 import com.ironsource.mediationsdk.utils.IronSourceConstants;
-import com.lib.adssdk.vServices;
+import com.google.ads.vServices;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;

@@ -1,7 +1,5 @@
 package com.adssdk;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,9 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.hanks.htextview.scale.ScaleTextView;
-import com.lib.adssdk.AdsManager.AdsManager;
-import com.lib.adssdk.AppUtil;
-import com.lib.adssdk.Listner.OnAdsClickListner;
+import com.google.play.AdsManager.AdsManager;
+import com.google.play.AppUtil;
+import com.google.play.Listner.OnAdsClickListner;
 
 public class OneBtnActivity_BgImg extends BaseActivity {
 

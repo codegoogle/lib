@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.greedyjude:pubnative-android-player:37605f12e3@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f578f48264e485c94d0efb97ecbcfc8b/jetified-pubnative-android-player-37605f12e3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f578f48264e485c94d0efb97ecbcfc8b/jetified-pubnative-android-player-37605f12e3/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f578f48264e485c94d0efb97ecbcfc8b/jetified-pubnative-android-player-37605f12e3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2dd8e5262ceee9f4783e62876445d962/transformed/jetified-pubnative-android-player-37605f12e3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2dd8e5262ceee9f4783e62876445d962/transformed/jetified-pubnative-android-player-37605f12e3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2dd8e5262ceee9f4783e62876445d962/transformed/jetified-pubnative-android-player-37605f12e3/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

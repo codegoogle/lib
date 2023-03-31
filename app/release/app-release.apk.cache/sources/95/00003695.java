@@ -1,4 +1,4 @@
-package com.lib.adssdk.Utils;
+package com.google.ads.Utils;
 
 import android.content.Context;
 import android.util.AttributeSet;

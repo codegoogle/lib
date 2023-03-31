@@ -1,4 +1,4 @@
-package com.lib.adssdk;
+package com.google.ads;
 
 import android.app.Activity;
 import android.app.Service;

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.greedygame.sdkx:mystique:0.0.94@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c8df66a235cf8e7608d4105fb4d62157/jetified-mystique-0.0.94/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c8df66a235cf8e7608d4105fb4d62157/jetified-mystique-0.0.94/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/d7c1e829ea8d7bdca6f3c6a84ef25b1d/transformed/jetified-mystique-0.0.94/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d7c1e829ea8d7bdca6f3c6a84ef25b1d/transformed/jetified-mystique-0.0.94/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

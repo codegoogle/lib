@@ -2,7 +2,7 @@ package com.p7700g.p99005;
 
 import android.app.Activity;
 import android.content.Intent;
-import com.lib.adssdk.Activity.QurekaActivity;
+import com.google.ads.Activity.QurekaActivity;
 
 /* compiled from: Qureka_Interstitial.java */
 /* loaded from: classes3.dex */

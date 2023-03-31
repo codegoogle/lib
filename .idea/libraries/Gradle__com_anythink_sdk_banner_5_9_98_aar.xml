@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.anythink.sdk:banner:5.9.98@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d886ed878a2a66cac74604475868a511/jetified-banner-5.9.98/jars/classes.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d886ed878a2a66cac74604475868a511/jetified-banner-5.9.98/jars/libs/anythink_banner.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d886ed878a2a66cac74604475868a511/jetified-banner-5.9.98/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f2230d47b5908e406b5826164039d4bd/transformed/jetified-banner-5.9.98/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f2230d47b5908e406b5826164039d4bd/transformed/jetified-banner-5.9.98/jars/libs/anythink_banner.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f2230d47b5908e406b5826164039d4bd/transformed/jetified-banner-5.9.98/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

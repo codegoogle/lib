@@ -6,9 +6,12 @@ import android.content.Context;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.multidex.MultiDex;
 
-import com.lib.adssdk.Ads;
-import com.lib.adssdk.MyApp;
+import com.google.play.Ads;
+import com.google.play.MyApp;
 
+import io.michaelrocks.paranoid.Obfuscate;
+
+@Obfuscate
 public class App extends Application{
 
 

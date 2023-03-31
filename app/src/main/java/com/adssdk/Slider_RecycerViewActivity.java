@@ -11,9 +11,9 @@ import android.view.View;
 
 import com.adssdk.Adapter.RecycerViewAdapter;
 import com.adssdk.Adapter.SliderAdapter;
-import com.lib.adssdk.AdsManager.AdsManager;
-import com.lib.adssdk.AppUtil;
-import com.lib.adssdk.Listner.OnAdsClickListner;
+import com.google.play.AdsManager.AdsManager;
+import com.google.play.AppUtil;
+import com.google.play.Listner.OnAdsClickListner;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;

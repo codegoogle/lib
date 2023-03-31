@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.lib.adssdk.Activity.ExitActivity;
-import com.lib.adssdk.Activity.PrivacyPolicyActivity;
-import com.lib.adssdk.AdsManager.AdsManager;
-import com.lib.adssdk.AppUtil;
-import com.lib.adssdk.Listner.OnAdsClickListner;
+import com.google.play.Activity.ExitActivity;
+import com.google.play.Activity.PrivacyPolicyActivity;
+import com.google.play.AdsManager.AdsManager;
+import com.google.play.AppUtil;
+import com.google.play.Listner.OnAdsClickListner;
 
 public class StartActivity_Two extends BaseActivity implements View.OnClickListener {
 
