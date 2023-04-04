@@ -7,11 +7,11 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 
-import com.google.android.gms.ads.FullScreenContentCallback;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.admanager.AdManagerAdRequest;
-import com.google.android.gms.ads.admanager.AdManagerInterstitialAd;
-import com.google.android.gms.ads.admanager.AdManagerInterstitialAdLoadCallback;
 import com.google.play.Listner.OnAdsClickListner;
 import com.google.play.Utils.Const;
 import com.google.play.Utils.utils;
@@ -19,7 +19,7 @@ import com.google.play.Utils.utils;
 public class Admob_Interstitial {
 
     public static final String TAG = "Admob_Interstitial";
-    public static AdManagerInterstitialAd interstitialAd = null, interstitialAd1 = null;
+    public static InterstitialAd interstitialAd = null, interstitialAd1 = null;
     public static OnAdsClickListner onAdsClickListner = null;
     public static Boolean isInterstitialTimerRun = false;
 
@@ -28,104 +28,106 @@ public class Admob_Interstitial {
     }
 
     public static void loadInterstitial(Activity activity) {
-        AdManagerAdRequest adRequest = new AdManagerAdRequest.Builder().build();
-
         String adId = utils.get_Admob_InterstitialAdsId();
-        AdManagerInterstitialAd.load(activity, adId, adRequest, new AdManagerInterstitialAdLoadCallback() {
+        InterstitialAd interstitialAdd = new InterstitialAd(activity);
+        interstitialAdd.setAdUnitId(adId);
+        interstitialAdd.loadAd(new AdRequest.Builder().build());
+        interstitialAdd.setAdListener(new AdListener() {
             @Override
-            public void onAdLoaded(@NonNull AdManagerInterstitialAd  minterstitialAd) {
-                interstitialAd = minterstitialAd;
-                Log.d(TAG, "Admob_Interstitial loadInterstitial onAdLoaded adId -> " + adId);
+            public void onAdLoaded() {
+                interstitialAd = interstitialAdd;
+                Log.d(TAG, "Admob_Interstitial loadInterstitial onAdLoaded adId " + adId);
+                super.onAdLoaded();
             }
 
             @Override
-            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+            public void onAdFailedToLoad(LoadAdError loadAdError) {
                 interstitialAd = null;
-                Log.d(TAG, "Admob_Interstitial loadInterstitial onAdFailedToLoad");
+                Log.d("Kishan", "Admob_Interstitial loadInterstitial onAdFailedToLoad -> " + adId + " message : " + loadAdError.toString());
+                super.onAdFailedToLoad(loadAdError);
             }
         });
     }
 
     public static void loadInterstitial1(Activity activity) {
-        AdManagerAdRequest adRequest = new AdManagerAdRequest.Builder().build();
-
+        InterstitialAd interstitialAdd = new InterstitialAd(activity);
         String adId = utils.get_Admob_InterstitialAdsId();
-        AdManagerInterstitialAd.load(activity, adId, adRequest, new AdManagerInterstitialAdLoadCallback() {
+        interstitialAdd.setAdUnitId(adId);
+        interstitialAdd.loadAd(new AdRequest.Builder().build());
+        interstitialAdd.setAdListener(new AdListener() {
             @Override
-            public void onAdLoaded(@NonNull AdManagerInterstitialAd minterstitialAd) {
-                interstitialAd1 = minterstitialAd;
-                Log.d(TAG, "Admob_Interstitial interstitialAd1 onAdLoaded adId -> " + adId);
+            public void onAdLoaded() {
+                interstitialAd1 = interstitialAdd;
+                Log.d(TAG, "Admob_Interstitial interstitialAd1 onAdLoaded adId " + adId);
+                super.onAdLoaded();
             }
 
             @Override
-            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+            public void onAdFailedToLoad(LoadAdError loadAdError) {
                 interstitialAd1 = null;
-                Log.d(TAG, "Admob_Interstitial interstitialAd1 onAdFailedToLoad");
+                Log.d(TAG, "Admob_Interstitial interstitialAd1 onAdFailedToLoad -> " + adId + " message : " + loadAdError.toString());
+                super.onAdFailedToLoad(loadAdError);
             }
         });
-    }
 
+    }
 
     public static void showInterstitial(Activity activity) {
 
 
         if (interstitialAd != null) {
-            interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                @Override
-                public void onAdDismissedFullScreenContent() {
-                    Log.d(TAG, "Admob_Interstitial showInterstitial onAdDismissedFullScreenContent");
-                    if (onAdsClickListner != null) {
-                        onAdsClickListner.OnAdsClick();
-                        onAdsClickListner = null;
+
+            if (interstitialAd.isLoaded()) {
+                interstitialAd.setAdListener(new AdListener() {
+                    @Override
+                    public void onAdClosed() {
+                        Log.d(TAG, "Admob_Interstitial showInterstitial onAdClosed");
+                        if (onAdsClickListner != null) {
+                            onAdsClickListner.OnAdsClick();
+                            onAdsClickListner = null;
+                        }
+                        interstitialAd = null;
+                        super.onAdClosed();
                     }
-                    interstitialAd = null;
+                });
+                interstitialAd.show();
+            } else {
+                if (onAdsClickListner != null) {
+                    onAdsClickListner.OnAdsClick();
+                    onAdsClickListner = null;
                 }
-
-                @Override
-                public void onAdFailedToShowFullScreenContent(com.google.android.gms.ads.AdError adError) {
-                    Log.d(TAG, "Admob_Interstitial showInterstitial onAdFailedToShowFullScreenContent -> " + adError);
-                    interstitialAd = null;
-                }
-
-                @Override
-                public void onAdShowedFullScreenContent() {
-//                    Log.d(TAG, "Admob_Interstitial showInterstitial onAdShowedFullScreenContent");
-                }
-            });
-            interstitialAd.show(activity);
+                interstitialAd = null;
+            }
             loadInterstitial1(activity);
         } else {
 
             if (interstitialAd1 != null) {
 
-                interstitialAd1.setFullScreenContentCallback(new FullScreenContentCallback() {
-                    @Override
-                    public void onAdDismissedFullScreenContent() {
-                        Log.d(TAG, "Admob_Interstitial showInterstitial onAdDismissedFullScreenContent");
-                        if (onAdsClickListner != null) {
-                            onAdsClickListner.OnAdsClick();
-                            onAdsClickListner = null;
+                if (interstitialAd1.isLoaded()) {
+                    interstitialAd1.setAdListener(new AdListener() {
+                        @Override
+                        public void onAdClosed() {
+                            Log.d(TAG, "Admob_Interstitial showInterstitial onAdClosed");
+                            if (onAdsClickListner != null) {
+                                onAdsClickListner.OnAdsClick();
+                                onAdsClickListner = null;
+                            }
+                            interstitialAd1 = null;
+                            super.onAdClosed();
                         }
-                        interstitialAd1 = null;
+                    });
+                    interstitialAd1.show();
+                } else {
+                    if (onAdsClickListner != null) {
+                        onAdsClickListner.OnAdsClick();
+                        onAdsClickListner = null;
                     }
-
-                    @Override
-                    public void onAdFailedToShowFullScreenContent(com.google.android.gms.ads.AdError adError) {
-                        Log.d(TAG, "Admob_Interstitial showInterstitial onAdFailedToShowFullScreenContent -> " + adError);
-                        interstitialAd1 = null;
-                    }
-
-                    @Override
-                    public void onAdShowedFullScreenContent() {
-//                    Log.d(TAG, "Admob_Interstitial showInterstitial onAdShowedFullScreenContent");
-                    }
-                });
-                interstitialAd1.show(activity);
+                    interstitialAd1 = null;
+                }
                 loadInterstitial(activity);
             } else {
                 startTimerInterstitialLoad(activity);
                 Log.d(TAG, "Admob_Interstitial showInterstitial interstitialAd & interstitialAd1 -> null");
-
             }
         }
     }

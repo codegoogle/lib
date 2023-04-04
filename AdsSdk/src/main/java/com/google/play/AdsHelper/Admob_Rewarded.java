@@ -6,14 +6,13 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+
 import com.google.android.gms.ads.AdError;
-//import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.OnUserEarnedRewardListener;
-import com.google.android.gms.ads.admanager.AdManagerAdRequest;
 import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdCallback;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.google.play.Listner.OnAdsClickListner;
 import com.google.play.Utils.Const;
@@ -34,21 +33,24 @@ public class Admob_Rewarded {
 
     public static void loadRewarded(Activity activity) {
 
-        AdManagerAdRequest request = new AdManagerAdRequest.Builder().build();
+        AdRequest request = new AdRequest.Builder().build();
         String adId = utils.get_Admob_RewardedAdsId();
-        RewardedAd.load(activity, adId, request, new RewardedAdLoadCallback() {
+        RewardedAd rewardedAd = new RewardedAd(activity, adId);
+        rewardedAd.loadAd(request, new RewardedAdLoadCallback() {
+
             @Override
-            public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+            public void onRewardedAdLoaded() {
                 mRewardedAd = rewardedAd;
                 Log.d(TAG, "Admob_Rewarded loadRewarded onAdLoaded");
+                super.onRewardedAdLoaded();
             }
 
             @Override
-            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                Log.d(TAG, "Admob_Rewarded loadRewarded onAdFailedToLoad");
+            public void onRewardedAdFailedToLoad(LoadAdError loadAdError) {
+                Log.d(TAG, "Admob_Rewarded loadRewarded onAdFailedToLoad ->" + loadAdError.toString());
                 mRewardedAd = null;
+                super.onRewardedAdFailedToLoad(loadAdError);
             }
-
         });
     }
 
@@ -67,38 +69,42 @@ public class Admob_Rewarded {
             }
         } else {
             Log.d(TAG, "Admob_Rewarded showRewarded showRewarded");
-            mRewardedAd.show(activity, new OnUserEarnedRewardListener() {
-                @Override
-                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                    Log.d(TAG, "Admob_Rewarded showRewarded onUserEarnedReward");
+            if (mRewardedAd.isLoaded()) {
+                mRewardedAd.show(activity, new RewardedAdCallback() {
+                    @Override
+                    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+                        Log.d(TAG, "Admob_Rewarded showRewarded onUserEarnedReward");
+                    }
+
+                    @Override
+                    public void onRewardedAdClosed() {
+                        if (onAdsClickListner != null) {
+                            onAdsClickListner.OnAdsClick();
+                        }
+                        Log.d(TAG, "Admob_Rewarded showRewarded onAdDismissedFullScreenContent");
+                        mRewardedAd = null;
+                        loadRewarded(activity);
+                        super.onRewardedAdClosed();
+                    }
+
+                    @Override
+                    public void onRewardedAdFailedToShow(AdError adError) {
+                        Log.d(TAG, "Admob_Rewarded showRewarded onAdFailedToShowFullScreenContent -> " + adError);
+                        mRewardedAd = null;
+                        super.onRewardedAdFailedToShow(adError);
+                    }
+                });
+            } else {
+                if (!isRewardedTimerRun) {
+                    isRewardedTimerRun = true;
+                    startTimerRewardedLoad();
+                    if (mRewardedAd == null) {
+                        loadRewarded(activity);
+                        Log.d(TAG, "Admob_Rewarded showRewarded mRewardedAd -> null Send loadRewarded");
+                    }
                 }
-            });
+            }
         }
-
-        mRewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-            @Override
-            public void onAdDismissedFullScreenContent() {
-                if (onAdsClickListner != null) {
-                    onAdsClickListner.OnAdsClick();
-                }
-                Log.d(TAG, "Admob_Rewarded showRewarded onAdDismissedFullScreenContent");
-                mRewardedAd = null;
-                loadRewarded(activity);
-            }
-
-            @Override
-            public void onAdFailedToShowFullScreenContent(AdError adError) {
-                Log.d(TAG, "Admob_Rewarded showRewarded onAdFailedToShowFullScreenContent -> " + adError);
-                mRewardedAd = null;
-            }
-
-            @Override
-            public void onAdShowedFullScreenContent() {
-                Log.d(TAG, "Admob_Rewarded showRewarded onAdShowedFullScreenContent");
-            }
-
-        });
-
     }
 
     private static void startTimerRewardedLoad() {
@@ -114,6 +120,5 @@ public class Admob_Rewarded {
 
         }.start();
     }
-
 
 }

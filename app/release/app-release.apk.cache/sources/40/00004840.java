@@ -1,7 +1,7 @@
 package com.p7700g.p99005;
 
 import android.view.View;
-import com.google.android.gms.ads.nativead.MediaView;
+import com.google.android.gms.ads.formats.MediaView;
 import com.p7700g.p99005.hd3;
 import org.jetbrains.annotations.NotNull;
 

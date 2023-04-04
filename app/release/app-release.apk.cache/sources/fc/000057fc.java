@@ -16,9 +16,9 @@ import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
-import com.google.android.gms.ads.nativead.MediaView;
+import com.google.android.gms.ads.formats.MediaView;
 import com.google.android.gms.ads.nativead.NativeAd;
-import com.google.android.gms.ads.nativead.NativeAdView;
+import com.google.android.gms.ads.formats.UnifiedNativeAdView;
 import com.p7700g.p99005.zg3;
 
 /* compiled from: Admob_Native_Inflate.java */

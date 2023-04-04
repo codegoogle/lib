@@ -13,12 +13,12 @@ import androidx.annotation.NonNull;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.admanager.AdManagerAdRequest;
-import com.google.android.gms.ads.nativead.NativeAd;
-import com.google.android.gms.ads.nativead.NativeAdOptions;
+import com.google.android.gms.ads.formats.NativeAdOptions;
+import com.google.android.gms.ads.formats.UnifiedNativeAd;
 import com.google.play.MyApp;
 import com.google.ads.R;
 import com.google.play.Utils.Const;
@@ -30,9 +30,9 @@ public class Admob_Native {
 
 
     //    -----------------------  Top Ads --------------------------------------
-    public static NativeAd nativeAdTop = null, nativeAdTop1 = null;
+    public static UnifiedNativeAd nativeAdTop = null, nativeAdTop1 = null;
     public static AdView bannerTop;
-    public static AdManagerAdRequest adRequestBannerTop;
+    public static AdRequest adRequestBannerTop;
     public static Boolean isNativeTopTimerRun = false;
 
     public static void loadBannerTop(Activity mactivity) {
@@ -42,50 +42,51 @@ public class Admob_Native {
             bannerTop = new AdView(mactivity);
             bannerTop.setAdSize(AdSize.BANNER);
             bannerTop.setAdUnitId(adId);
-            adRequestBannerTop = new AdManagerAdRequest.Builder().build();
+            adRequestBannerTop = new AdRequest.Builder().build();
         }
     }
 
     public static void loadNativeTop(Activity mactivity) {
-
         String adId = utils.get_Admob_NativeAdsId_1();
-        final AdLoader adLoader = new AdLoader.Builder(mactivity, adId)
-                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                    @Override
-                    public void onNativeAdLoaded(NativeAd mnativeAd) {
-                        Log.d(TAG, "Admob_Native loadNativeTop onNativeAdLoaded adId -> " + adId);
-                        nativeAdTop = mnativeAd;
-                    }
-                })
-                .withAdListener(new AdListener() {
-                    @Override
-                    public void onAdFailedToLoad(LoadAdError adError) {
-                        Log.d(TAG, "Admob_Native loadNativeTop onAdFailedToLoad adId -> " + adId);
-                    }
-                })
-                .withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
-        adLoader.loadAd(new AdManagerAdRequest.Builder().build());
+        AdLoader.Builder builder = new AdLoader.Builder(mactivity, adId);
+        builder.forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
+            @Override
+            public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
+                nativeAdTop = unifiedNativeAd;
+                Log.d(TAG, "Admob_Native loadNativeTop onNativeAdLoaded adId -> " + adId);
+            }
+        });
+        builder.withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
+        AdLoader adLoader = builder.withAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(LoadAdError loadAdError) {
+                Log.d(TAG, "Admob_Native loadNativeTop onAdFailedToLoad adId -> " + adId + " message: " + loadAdError.toString());
+                super.onAdFailedToLoad(loadAdError);
+            }
+        }).build();
+        adLoader.loadAd(new AdRequest.Builder().build());
     }
 
     public static void loadNativeTop1(Activity mactivity) {
 
         String adId = utils.get_Admob_NativeAdsId_2();
-        final AdLoader adLoader = new AdLoader.Builder(mactivity, adId)
-                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                    @Override
-                    public void onNativeAdLoaded(NativeAd mnativeAd) {
-                        Log.d(TAG, "Admob_Native loadNativeTop1 onNativeAdLoaded adId -> " + adId);
-                        nativeAdTop1 = mnativeAd;
-                    }
-                })
-                .withAdListener(new AdListener() {
-                    @Override
-                    public void onAdFailedToLoad(LoadAdError adError) {
-                        Log.d(TAG, "Admob_Native loadNativeTop1 onAdFailedToLoad adId -> " + adId);
-                    }
-                })
-                .withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
-        adLoader.loadAd(new AdManagerAdRequest.Builder().build());
+        AdLoader.Builder builder = new AdLoader.Builder(mactivity, adId);
+        builder.forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
+            @Override
+            public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
+                nativeAdTop1 = unifiedNativeAd;
+                Log.d(TAG, "Admob_Native loadNativeTop1 onNativeAdLoaded adId -> " + adId);
+            }
+        });
+        builder.withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
+        AdLoader adLoader = builder.withAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(LoadAdError loadAdError) {
+                Log.d(TAG, "Admob_Native loadNativeTop1 onAdFailedToLoad adId -> " + adId + " message: " + loadAdError.toString());
+                super.onAdFailedToLoad(loadAdError);
+            }
+        }).build();
+        adLoader.loadAd(new AdRequest.Builder().build());
     }
 
     public static void showTopNative(Activity activity, ViewGroup viewGroup, String nativeType, String direction) {
@@ -177,7 +178,7 @@ public class Admob_Native {
         }.start();
     }
 
-    private static void showAdmobNative_Big(Activity activity, ViewGroup viewGroup, NativeAd nativeAd, String nativeType, String direction) {
+    private static void showAdmobNative_Big(Activity activity, ViewGroup viewGroup, UnifiedNativeAd nativeAd, String nativeType, String direction) {
         Log.d(TAG, "Admob_Native showAdmobNative_Big-> ");
         try {
             viewGroup.setVisibility(View.VISIBLE);
@@ -206,7 +207,7 @@ public class Admob_Native {
 
     }
 
-    private static void showAdmobNative_SmallTop(Activity activity, ViewGroup viewGroup, NativeAd nativeAd, String nativeType, String direction) {
+    private static void showAdmobNative_SmallTop(Activity activity, ViewGroup viewGroup, UnifiedNativeAd nativeAd, String nativeType, String direction) {
         Log.d(TAG, "Admob_Native showAdmobNative_SmallTop -> ");
 
         try {
@@ -310,9 +311,9 @@ public class Admob_Native {
 
 
     //    -----------------------  Bottom Ads --------------------------------------
-    public static NativeAd nativeAdBottom = null, nativeAdBottom1 = null;
+    public static UnifiedNativeAd nativeAdBottom = null, nativeAdBottom1 = null;
     public static AdView bannerBottom;
-    public static AdManagerAdRequest adRequestBannerBottom;
+    public static AdRequest adRequestBannerBottom;
     public static Boolean isNativeBottomTimerRun = false;
 
 
@@ -325,48 +326,50 @@ public class Admob_Native {
             bannerBottom = new AdView(mactivity);
             bannerBottom.setAdSize(AdSize.BANNER);
             bannerBottom.setAdUnitId(adId);
-            adRequestBannerBottom = new AdManagerAdRequest.Builder().build();
+            adRequestBannerBottom = new AdRequest.Builder().build();
         }
     }
 
     public static void loadNativeBottom(Activity mactivity) {
         String adId = utils.get_Admob_NativeAdsId_2();
-        final AdLoader adLoader = new AdLoader.Builder(mactivity, adId)
-                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                    @Override
-                    public void onNativeAdLoaded(NativeAd mnativeAd) {
-                        Log.d(TAG, "Admob_Native loadNativeBottom onNativeAdLoaded adId -> " + adId);
-                        nativeAdBottom = mnativeAd;
-                    }
-                })
-                .withAdListener(new AdListener() {
-                    @Override
-                    public void onAdFailedToLoad(LoadAdError adError) {
-                        Log.d(TAG, "Admob_Native loadNativeBottom onAdFailedToLoad adId -> " + adId);
-                    }
-                })
-                .withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
-        adLoader.loadAd(new AdManagerAdRequest.Builder().build());
+        AdLoader.Builder builder = new AdLoader.Builder(mactivity, adId);
+        builder.forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
+            @Override
+            public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
+                nativeAdBottom = unifiedNativeAd;
+                Log.d(TAG, "Admob_Native loadNativeBottom onNativeAdLoaded adId -> " + adId);
+            }
+        });
+        builder.withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
+        AdLoader adLoader = builder.withAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(LoadAdError loadAdError) {
+                Log.d(TAG, "Admob_Native loadNativeBottom onAdFailedToLoad adId -> " + adId + " message: " + loadAdError.toString());
+                super.onAdFailedToLoad(loadAdError);
+            }
+        }).build();
+        adLoader.loadAd(new AdRequest.Builder().build());
     }
 
     public static void loadNativeBottom1(Activity mactivity) {
         String adId = utils.get_Admob_NativeAdsId_1();
-        final AdLoader adLoader = new AdLoader.Builder(mactivity, adId)
-                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                    @Override
-                    public void onNativeAdLoaded(NativeAd mnativeAd) {
-                        Log.d(TAG, "Admob_Native loadNativeBottom1 onNativeAdLoaded adId -> " + adId);
-                        nativeAdBottom1 = mnativeAd;
-                    }
-                })
-                .withAdListener(new AdListener() {
-                    @Override
-                    public void onAdFailedToLoad(LoadAdError adError) {
-                        Log.d(TAG, "Admob_Native loadNativeBottom1 onAdFailedToLoad adId -> " + adId);
-                    }
-                })
-                .withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
-        adLoader.loadAd(new AdManagerAdRequest.Builder().build());
+        AdLoader.Builder builder = new AdLoader.Builder(mactivity, adId);
+        builder.forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
+            @Override
+            public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
+                nativeAdBottom1 = unifiedNativeAd;
+                Log.d(TAG, "Admob_Native loadNativeBottom1 onNativeAdLoaded adId -> " + adId);
+            }
+        });
+        builder.withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
+        AdLoader adLoader = builder.withAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(LoadAdError loadAdError) {
+                Log.d(TAG, "Admob_Native loadNativeBottom1 onAdFailedToLoad adId -> " + adId + " message: " + loadAdError.toString());
+                super.onAdFailedToLoad(loadAdError);
+            }
+        }).build();
+        adLoader.loadAd(new AdRequest.Builder().build());
     }
 
 
@@ -430,7 +433,7 @@ public class Admob_Native {
     }
 
 
-    private static void showAdmobNative_SmallBottom(Activity activity,ViewGroup viewGroup, NativeAd nativeAd, String nativeType, String direction) {
+    private static void showAdmobNative_SmallBottom(Activity activity, ViewGroup viewGroup, UnifiedNativeAd nativeAd, String nativeType, String direction) {
         Log.d(TAG, "Admob_Native showAdmobNative_SmallBottom -> ");
 
         try {
@@ -464,7 +467,7 @@ public class Admob_Native {
 
     }
 
-    private static void showAdmobBanner_Bottom(Activity activity,ViewGroup viewGroup, AdView bannerBottom, String nativeType, String direction) {
+    private static void showAdmobBanner_Bottom(Activity activity, ViewGroup viewGroup, AdView bannerBottom, String nativeType, String direction) {
         Log.d(TAG, "Admob_Native showAdmobBanner_Bottom -> ");
 
 
@@ -529,47 +532,49 @@ public class Admob_Native {
 
     //    -----------------------  Extra Ads --------------------------------------
 
-    public static NativeAd nativeAdExtra = null, nativeAdExtra1 = null;
+    public static UnifiedNativeAd nativeAdExtra = null, nativeAdExtra1 = null;
     public static Boolean isNativeExtraTimerRun = false;
 
     public static void loadNativeExtra(Activity mactivity) {
         String adId = utils.get_Admob_NativeAdsId_1();
-        final AdLoader adLoader = new AdLoader.Builder(mactivity, adId)
-                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                    @Override
-                    public void onNativeAdLoaded(NativeAd mnativeAd) {
-                        Log.d(TAG, "Admob_Native loadNativeExtra onNativeAdLoaded");
-                        nativeAdExtra = mnativeAd;
-                    }
-                })
-                .withAdListener(new AdListener() {
-                    @Override
-                    public void onAdFailedToLoad(LoadAdError adError) {
-                        Log.d(TAG, "Admob_Native loadNativeExtra onAdFailedToLoad ");
-                    }
-                })
-                .withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
-        adLoader.loadAd(new AdManagerAdRequest.Builder().build());
+        AdLoader.Builder builder = new AdLoader.Builder(mactivity, adId);
+        builder.forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
+            @Override
+            public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
+                nativeAdExtra = unifiedNativeAd;
+                Log.d(TAG, "Admob_Native loadNativeExtra onNativeAdLoaded");
+            }
+        });
+        builder.withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
+        AdLoader adLoader = builder.withAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(LoadAdError loadAdError) {
+                Log.d(TAG, "Admob_Native loadNativeExtra onAdFailedToLoad ->" + adId + " message: " + loadAdError.toString());
+                super.onAdFailedToLoad(loadAdError);
+            }
+        }).build();
+        adLoader.loadAd(new AdRequest.Builder().build());
     }
 
     public static void loadNativeExtra1(Activity mactivity) {
         String adId = utils.get_Admob_NativeAdsId_2();
-        final AdLoader adLoader = new AdLoader.Builder(mactivity, adId)
-                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                    @Override
-                    public void onNativeAdLoaded(NativeAd mnativeAd) {
-                        Log.d(TAG, "Admob_Native loadNativeExtra onNativeAdLoaded");
-                        nativeAdExtra1 = mnativeAd;
-                    }
-                })
-                .withAdListener(new AdListener() {
-                    @Override
-                    public void onAdFailedToLoad(LoadAdError adError) {
-                        Log.d(TAG, "Admob_Native loadNativeExtra onAdFailedToLoad ");
-                    }
-                })
-                .withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
-        adLoader.loadAd(new AdManagerAdRequest.Builder().build());
+        AdLoader.Builder builder = new AdLoader.Builder(mactivity, adId);
+        builder.forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
+            @Override
+            public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
+                nativeAdExtra1 = unifiedNativeAd;
+                Log.d(TAG, "Admob_Native loadNativeExtra1 onNativeAdLoaded");
+            }
+        });
+        builder.withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
+        AdLoader adLoader = builder.withAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(LoadAdError loadAdError) {
+                Log.d(TAG, "Admob_Native loadNativeExtra onAdFailedToLoad ->" + adId + " message: " + loadAdError.toString());
+                super.onAdFailedToLoad(loadAdError);
+            }
+        }).build();
+        adLoader.loadAd(new AdRequest.Builder().build());
     }
 
     public static void showNativeExtra(Activity activity, ViewGroup id, String nativeType, String direction) {
@@ -603,7 +608,7 @@ public class Admob_Native {
 
     }
 
-    private static void showAdmobNative_Extra(Activity activity, ViewGroup viewGroup, NativeAd nativeAd, String nativeType, String direction) {
+    private static void showAdmobNative_Extra(Activity activity, ViewGroup viewGroup, UnifiedNativeAd nativeAd, String nativeType, String direction) {
         Log.d(TAG, "Admob_Native showAdmobNative_Extra -> ");
         try {
             viewGroup.setVisibility(View.VISIBLE);
@@ -665,5 +670,4 @@ public class Admob_Native {
     }
 
     //    -----------------------  Extra Ads --------------------------------------
-
 }

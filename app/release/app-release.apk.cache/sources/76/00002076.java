@@ -3,7 +3,7 @@ package com.google.android.gms.internal.ads;
 import android.content.Context;
 import android.os.RemoteException;
 import com.google.android.gms.ads.VideoController;
-import com.google.android.gms.ads.nativead.MediaView;
+import com.google.android.gms.ads.formats.MediaView;
 import com.google.android.gms.ads.nativead.NativeAd;
 import com.google.android.gms.ads.nativead.NativeCustomFormatAd;
 import com.google.android.gms.common.util.VisibleForTesting;

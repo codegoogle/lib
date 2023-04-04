@@ -31,7 +31,7 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import androidx.appcompat.widget.ActivityChooserModel;
 import com.google.android.gms.ads.impl.R;
-import com.google.android.gms.ads.nativead.NativeAdView;
+import com.google.android.gms.ads.formats.UnifiedNativeAdView;
 import com.google.android.gms.common.GooglePlayServicesUtilLight;
 import com.google.android.gms.common.util.ClientLibraryUtils;
 import com.google.android.gms.common.util.CrashUtils;

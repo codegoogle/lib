@@ -18,9 +18,9 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 
-import com.google.android.gms.ads.nativead.MediaView;
-import com.google.android.gms.ads.nativead.NativeAd;
-import com.google.android.gms.ads.nativead.NativeAdView;
+import com.google.android.gms.ads.formats.MediaView;
+import com.google.android.gms.ads.formats.UnifiedNativeAd;
+import com.google.android.gms.ads.formats.UnifiedNativeAdView;
 import com.google.play.Animation.Techniques;
 import com.google.play.Animation.YoYo;
 import com.google.play.MyApp;
@@ -44,7 +44,7 @@ public class Admob_Native_Inflate {
         return res;
     }
 
-    public static void inflate_native_big_card(Activity activity, ViewGroup viewGroup, NativeAd nativeAd, String nativeType, String direction) {
+    public static void inflate_native_big_card(Activity activity, ViewGroup viewGroup, UnifiedNativeAd nativeAd, String nativeType, String direction) {
         mactivity = activity;
 
         viewGroup.setVisibility(View.VISIBLE);
@@ -59,9 +59,7 @@ public class Admob_Native_Inflate {
 
             CardView card = view.findViewById(R.id.card);
             TextView ad_headline = view.findViewById(R.id.ad_headline);
-            ad_headline.setTextColor(getResources().getColor(R.color.ad_text_primary));
             TextView ad_body = view.findViewById(R.id.ad_body);
-            ad_body.setTextColor(getResources().getColor(R.color.ad_text_primary));
 
             if (MyApp.getString(Const.ads_btn_1_background).equals("")) {
                 card.setCardBackgroundColor(Color.parseColor("#00000000"));
@@ -96,11 +94,6 @@ public class Admob_Native_Inflate {
             ad_call_to_action.setTextColor(Color.parseColor(MyApp.getString(Const.ads_btn_color_text)));
         }
 
-        TextView ad_headline = view.findViewById(R.id.ad_headline);
-        ad_headline.setTextColor(getResources().getColor(R.color.ad_text_primary));
-        TextView ad_body = view.findViewById(R.id.ad_body);
-        ad_body.setTextColor(getResources().getColor(R.color.ad_text_primary));
-
 
         //Set Btn Theme
         RelativeLayout cardviewopanbtn = view.findViewById(R.id.cardviewopanbtn);
@@ -131,7 +124,7 @@ public class Admob_Native_Inflate {
             }
         }
 
-        NativeAdView adView = (NativeAdView) view.findViewById(R.id.uadview);
+        UnifiedNativeAdView adView = (UnifiedNativeAdView) view.findViewById(R.id.uadview);
         adView.setMediaView((MediaView) adView.findViewById(R.id.ad_media));
         adView.setHeadlineView(adView.findViewById(R.id.ad_headline));
         adView.setBodyView(adView.findViewById(R.id.ad_body));
@@ -167,7 +160,7 @@ public class Admob_Native_Inflate {
         adView.setNativeAd(nativeAd);
     }
 
-    public static void inflate_native_SmallTop(Activity activity, ViewGroup viewGroup, NativeAd nativeAd, String nativeType, String direction) {
+    public static void inflate_native_SmallTop(Activity activity, ViewGroup viewGroup, UnifiedNativeAd nativeAd, String nativeType, String direction) {
         mactivity = activity;
 
         viewGroup.setVisibility(View.VISIBLE);
@@ -178,7 +171,6 @@ public class Admob_Native_Inflate {
         viewGroup.addView(view);
 
 
-
         //Set Text Theme
         TextView ad_call_to_action = view.findViewById(R.id.ad_call_to_action);
         if (!MyApp.getString(Const.ads_btn_text).equals("")) {
@@ -187,11 +179,6 @@ public class Admob_Native_Inflate {
         if (!MyApp.getString(Const.ads_btn_color_text).equals("")) {
             ad_call_to_action.setTextColor(Color.parseColor(MyApp.getString(Const.ads_btn_color_text)));
         }
-
-        TextView ad_headline = view.findViewById(R.id.ad_headline);
-        ad_headline.setTextColor(getResources().getColor(R.color.ad_text_primary));
-        TextView ad_body = view.findViewById(R.id.ad_body);
-        ad_body.setTextColor(getResources().getColor(R.color.ad_text_primary));
 
 
         //Set Btn Theme
@@ -215,7 +202,7 @@ public class Admob_Native_Inflate {
 
 
 
-        NativeAdView adView = (NativeAdView) view.findViewById(R.id.uadview);
+        UnifiedNativeAdView adView = (UnifiedNativeAdView) view.findViewById(R.id.uadview);
         adView.setMediaView((MediaView) adView.findViewById(R.id.ad_media));
         adView.setHeadlineView(adView.findViewById(R.id.ad_headline));
         adView.setBodyView(adView.findViewById(R.id.ad_body));
@@ -251,7 +238,7 @@ public class Admob_Native_Inflate {
         adView.setNativeAd(nativeAd);
     }
 
-    public static void inflate_native_Small_Banner(Activity activity, ViewGroup viewGroup, NativeAd nativeAd, String nativeType, String direction) {
+    public static void inflate_native_Small_Banner(Activity activity, ViewGroup viewGroup, UnifiedNativeAd nativeAd, String nativeType, String direction) {
         mactivity = activity;
 
         viewGroup.setVisibility(View.VISIBLE);
@@ -267,9 +254,6 @@ public class Admob_Native_Inflate {
         CardView card = view.findViewById(R.id.card);
         TextView ad_headline = view.findViewById(R.id.ad_headline);
         TextView ad_body = view.findViewById(R.id.ad_body);
-
-        ad_headline.setTextColor(getResources().getColor(R.color.ad_text_primary));
-        ad_body.setTextColor(getResources().getColor(R.color.ad_text_primary));
 
         if (MyApp.getString(Const.ads_btn_1_background).equals("")) {
             card.setCardBackgroundColor(Color.parseColor("#00000000"));
@@ -291,7 +275,7 @@ public class Admob_Native_Inflate {
         TextView ad_call_to_action = view.findViewById(R.id.ad_call_to_action);
         utils.setAdsBtnText(ad_call_to_action);
 
-        NativeAdView adView = (NativeAdView) view.findViewById(R.id.uadview);
+        UnifiedNativeAdView adView = (UnifiedNativeAdView) view.findViewById(R.id.uadview);
         adView.setHeadlineView(adView.findViewById(R.id.ad_headline));
         adView.setBodyView(adView.findViewById(R.id.ad_body));
         adView.setCallToActionView(adView.findViewById(R.id.ad_call_to_action));
@@ -346,7 +330,7 @@ public class Admob_Native_Inflate {
 
     }
 
-    public static void inflate_native_SmallBottom(Activity activity, ViewGroup viewGroup, NativeAd nativeAd, String nativeType, String direction) {
+    public static void inflate_native_SmallBottom(Activity activity, ViewGroup viewGroup, UnifiedNativeAd nativeAd, String nativeType, String direction) {
         mactivity = activity;
 
         viewGroup.setVisibility(View.VISIBLE);
@@ -356,15 +340,9 @@ public class Admob_Native_Inflate {
         View view = (View) inflater.inflate(R.layout.ads_native_admob_small_bottom, null);
         viewGroup.addView(view);
 
-
         //Set Text Theme
         TextView ad_call_to_action = view.findViewById(R.id.ad_call_to_action);
         utils.setAdsBtnText(ad_call_to_action);
-
-        TextView ad_headline = view.findViewById(R.id.ad_headline);
-        ad_headline.setTextColor(getResources().getColor(R.color.ad_text_primary));
-        TextView ad_body = view.findViewById(R.id.ad_body);
-        ad_body.setTextColor(getResources().getColor(R.color.ad_text_primary));
 
         //Set Btn Theme
         RelativeLayout cardviewopanbtn = view.findViewById(R.id.cardviewopanbtn);
@@ -386,7 +364,7 @@ public class Admob_Native_Inflate {
         }
 
 
-        NativeAdView adView = (NativeAdView) view.findViewById(R.id.uadview);
+        UnifiedNativeAdView adView = (UnifiedNativeAdView) view.findViewById(R.id.uadview);
         adView.setMediaView((MediaView) adView.findViewById(R.id.ad_media));
         adView.setHeadlineView(adView.findViewById(R.id.ad_headline));
         adView.setBodyView(adView.findViewById(R.id.ad_body));

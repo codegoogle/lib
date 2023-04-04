@@ -6,9 +6,9 @@ import android.os.CountDownTimer;
 import android.util.Log;
 
 import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.admanager.AdManagerAdRequest;
 import com.google.android.gms.ads.appopen.AppOpenAd;
 import com.google.play.Listner.OnAdsClickListner;
 import com.google.play.Utils.Const;
@@ -33,19 +33,21 @@ public class Admob_AppOpen {
 
         loadCallback = new AppOpenAd.AppOpenAdLoadCallback() {
             @Override
-            public void onAdLoaded(AppOpenAd ad) {
+            public void onAppOpenAdLoaded(AppOpenAd ad) {
                 Log.d(TAG, "Admob_AppOpen loadAppOpen onAdLoaded");
                 appOpenAd = ad;
+                super.onAppOpenAdLoaded(ad);
             }
 
             @Override
-            public void onAdFailedToLoad(LoadAdError loadAdError) {
+            public void onAppOpenAdFailedToLoad(LoadAdError loadAdError) {
                 appOpenAd = null;
-                Log.d(TAG, "Admob_AppOpen loadAppOpen onAdFailedToLoad");
+                Log.d(TAG, "Admob_AppOpen loadAppOpen onAdFailedToLoad " + loadAdError.toString());
+                super.onAppOpenAdFailedToLoad(loadAdError);
             }
 
         };
-        AdManagerAdRequest request = new AdManagerAdRequest.Builder().build();
+        AdRequest request = new AdRequest.Builder().build();
         String adId = utils.get_Admob_OpenAdsId();
         AppOpenAd.load(activity, adId, request, AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, loadCallback);
     }
@@ -54,19 +56,20 @@ public class Admob_AppOpen {
 
         loadCallback1 = new AppOpenAd.AppOpenAdLoadCallback() {
             @Override
-            public void onAdLoaded(AppOpenAd ad) {
+            public void onAppOpenAdLoaded(AppOpenAd ad) {
                 Log.d(TAG, "Admob_AppOpen loadAppOpen1 onAdLoaded");
                 appOpenAd1 = ad;
+                super.onAppOpenAdLoaded(ad);
             }
 
             @Override
-            public void onAdFailedToLoad(LoadAdError loadAdError) {
+            public void onAppOpenAdFailedToLoad(LoadAdError loadAdError) {
                 appOpenAd1 = null;
-                Log.d(TAG, "Admob_AppOpen loadAppOpen1 onAdFailedToLoad");
+                Log.d(TAG, "Admob_AppOpen loadAppOpen1 onAdFailedToLoad " + loadAdError.toString());
+                super.onAppOpenAdFailedToLoad(loadAdError);
             }
-
         };
-        AdManagerAdRequest request = new AdManagerAdRequest.Builder().build();
+        AdRequest request = new AdRequest.Builder().build();
         String adId = utils.get_Admob_OpenAdsId();
         AppOpenAd.load(activity, adId, request, AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, loadCallback1);
     }
@@ -98,8 +101,7 @@ public class Admob_AppOpen {
                             Log.d(TAG, "Admob_AppOpen showAppOpen onAdShowedFullScreenContent appOpenAd");
                         }
                     };
-            appOpenAd.setFullScreenContentCallback(fullScreenContentCallback);
-            appOpenAd.show(activity);
+            appOpenAd.show(activity,fullScreenContentCallback);
             Log.d(TAG, "Admob_AppOpen showAppOpen appOpenAd");
 
             loadAppOpen1(activity);
@@ -120,7 +122,7 @@ public class Admob_AppOpen {
 
                             @Override
                             public void onAdFailedToShowFullScreenContent(AdError adError) {
-                                Log.d(TAG, "Admob_AppOpen showAppOpen onAdFailedToShowFullScreenContent appOpenAd1 -> " + adError);
+                                Log.d(TAG, "Admob_AppOpen showAppOpen onAdFailedToShowFullScreenContent appOpenAd1 -> " + adError.toString());
                                 appOpenAd1 = null;
                             }
 
@@ -129,10 +131,8 @@ public class Admob_AppOpen {
                                 Log.d(TAG, "Admob_AppOpen showAppOpen onAdShowedFullScreenContent appOpenAd1");
                             }
                         };
-                appOpenAd1.setFullScreenContentCallback(fullScreenContentCallback);
-                appOpenAd1.show(activity);
+                appOpenAd1.show(activity,fullScreenContentCallback);
                 Log.d(TAG, "Admob_AppOpen showAppOpen appOpenAd1");
-
                 loadAppOpen(activity);
             } else {
 
