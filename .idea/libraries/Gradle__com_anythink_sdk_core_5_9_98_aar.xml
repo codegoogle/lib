@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.anythink.sdk:core:5.9.98@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/061ba8eb932758718e62e1bd054f64a6/transformed/jetified-core-5.9.98/jars/classes.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/061ba8eb932758718e62e1bd054f64a6/transformed/jetified-core-5.9.98/jars/libs/anythink_core.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/061ba8eb932758718e62e1bd054f64a6/transformed/jetified-core-5.9.98/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/061ba8eb932758718e62e1bd054f64a6/transformed/jetified-core-5.9.98/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/eef850fcf28ed96ed146c41f33fa479f/transformed/jetified-core-5.9.98/jars/libs/anythink_core.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/eef850fcf28ed96ed146c41f33fa479f/transformed/jetified-core-5.9.98/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/eef850fcf28ed96ed146c41f33fa479f/transformed/jetified-core-5.9.98/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/eef850fcf28ed96ed146c41f33fa479f/transformed/jetified-core-5.9.98/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

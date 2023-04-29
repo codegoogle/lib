@@ -5,11 +5,11 @@ plugins {
 apply plugin: 'io.michaelrocks.paranoid'
 
 android {
-    compileSdk 33
+    compileSdk rootProject.ext.compileSdk
 
     defaultConfig {
-        minSdk 21
-        targetSdk 33
+        minSdk rootProject.ext.minSdk
+        targetSdk rootProject.ext.targetSdk
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -107,8 +107,8 @@ dependencies {
 
     ////////////////Facebook Ads///////////////////
     implementation 'androidx.annotation:annotation:1.0.0'
-//    implementation 'com.facebook.android:audience-network-sdk:6.+'
-    implementation 'com.facebook.android:audience-network-sdk:5.11.0'
+    implementation 'com.facebook.android:audience-network-sdk:6.+'
+//    implementation 'com.facebook.android:audience-network-sdk:5.11.0'
 
     ////////////////For Opan Ads admob///////////////////
     implementation 'androidx.lifecycle:lifecycle-process:2.5.1'
@@ -118,7 +118,6 @@ dependencies {
     implementation 'com.airbnb.android:lottie:5.2.0'
     implementation 'com.sun.jersey:jersey-core:1.19.4'
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
-    implementation 'androidx.work:work-runtime:2.8.1'
 
     //////////////// Api Calling ///////////////////
     implementation 'com.android.volley:volley:1.2.1'

@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.AnchorFree.hydra-vpn-android:corevpn:1e6cf987@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/fd82d67cdcfaa09ac2704d0523ba519a/transformed/jetified-corevpn-1e6cf987/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fd82d67cdcfaa09ac2704d0523ba519a/transformed/jetified-corevpn-1e6cf987/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fd82d67cdcfaa09ac2704d0523ba519a/transformed/jetified-corevpn-1e6cf987/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9fa2f359ff11cac98d9a018e7af8865a/transformed/jetified-corevpn-1e6cf987/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9fa2f359ff11cac98d9a018e7af8865a/transformed/jetified-corevpn-1e6cf987/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9fa2f359ff11cac98d9a018e7af8865a/transformed/jetified-corevpn-1e6cf987/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
